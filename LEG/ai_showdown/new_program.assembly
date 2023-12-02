@@ -1,0 +1,4 @@
+ADD+IM2 IN 0 RG5 # Move IN to Reg5
+ADD+IM1+IM2 2 0 OUT # Move 2 to OUT
+ADD+IM2 IN 0 RG1 # Move IN to Reg1
+SUB+IM1+IM2 RG5 RG1 RG2 # Reg5 minus Reg1 into Reg2

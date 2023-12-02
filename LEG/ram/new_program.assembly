@@ -1,0 +1,17 @@
+const plcHldr 0
+
+# Take inputs and store it in ram
+label takeIns
+ADD+IM2 IN 0 RG1
+ADD+RMS+IM2 RG1 0 RG1
+ADD+IM2 RG0 1 RG0
+JNE+IM2 RG0 32 takeIns
+
+# Reset the address register
+ADD+IM1+IM2 0 0 RG0
+
+# Take ram and output it
+label putOuts
+ADD+RML plcHldr plcHldr OUT
+ADD+IM2 RG0 1 RG0
+JNE+IM2 RG0 32 putOuts
